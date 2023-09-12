@@ -6,9 +6,7 @@ import {
   PaymentElement,
   useElements,
   useStripe,
-  
 } from "@stripe/react-stripe-js";
-
 import { redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
@@ -29,6 +27,7 @@ const CheckOutForm = ({ data,user,refetch }: Props) => {
   const [message, setMessage] = useState<any>("");
   const [createOrder, { data: orderData, error }] = useCreateOrderMutation();
   const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (!stripe || !elements) {
