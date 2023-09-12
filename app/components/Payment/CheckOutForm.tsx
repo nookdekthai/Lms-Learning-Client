@@ -6,13 +6,18 @@ import {
   PaymentElement,
   useElements,
   useStripe,
+  Elements,
+
 } from "@stripe/react-stripe-js";
+import {loadStripe} from '@stripe/stripe-js';
+
 import { redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import socketIO from "socket.io-client";
 const ENDPOINT = process.env.NEXT_PUBLIC_SOCKET_SERVER_URI || "";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
+const stripePromise = loadStripe('pk_live_51NIT4YE3uKYHirTMDVLV0mbcYHHdzD2cKU1VSaeDoaNDxx75x6fo9Z5qsh6jA6TRUm9TLJlpQZMMkQHGXL3RMpxl00g9KvAWWb');
 
 type Props = {
   setOpen: any;
@@ -67,12 +72,12 @@ const CheckOutForm = ({ data,user,refetch }: Props) => {
   
 
   return (
+    <Elements stripe={stripePromise} options={{clientSecret:'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'}}>
     <form id="payment-form" onSubmit={handleSubmit}>
       <LinkAuthenticationElement id="link-authentication-element" />
-      <PaymentElement id="payment-element" />
+      <PaymentElement options={{}} id="payment-element" />
       <button disabled={isLoading || !stripe || !elements} id="submit">
         <span id="button-text" className={`${styles.button} mt-2 !h-[35px]`}>
-          {isLoading ? "Paying..." : "Pay now"}
         </span>
       </button>
       {/* Show any error or success messages */}
@@ -82,6 +87,7 @@ const CheckOutForm = ({ data,user,refetch }: Props) => {
         </div>
       )}
     </form>
+    </Elements>
   );
 };
 
