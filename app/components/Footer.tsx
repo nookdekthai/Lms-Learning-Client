@@ -73,10 +73,10 @@ const Footer = (props: Props) => {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="https://www.youtube.com/channel/UCHz6Sne9splmvm-q2w1_HWQ"
+                  href="https://www.facebook.com"
                   className="text-base text-black dark:text-gray-300 dark:hover:text-white"
                 >
-                  Youtube
+                  Facebook
                 </Link>
               </li>
               <li>
@@ -92,7 +92,7 @@ const Footer = (props: Props) => {
                   href="https://www.github.com/shahriarsajeeb"
                   className="text-base text-black dark:text-gray-300 dark:hover:text-white"
                 >
-                  github
+                  Line
                 </Link>
               </li>
             </ul>
@@ -115,7 +115,7 @@ const Footer = (props: Props) => {
         </div>
         <br />
         <p className="text-center text-black dark:text-white">
-          Copyright © 2023 ELearning | All Rights Reserved
+          Copyright © 2023 Foodtek-ftc | All Rights Reserved
         </p>
       </div>
       <br />
