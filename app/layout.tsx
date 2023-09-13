@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import { Poppins , Kanit , Anuphan} from "next/font/google";
+import { Poppins, Kanit, Anuphan } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
 import { ThemeProvider } from "./utils/theme-provider";
 import { Toaster } from "react-hot-toast";
@@ -32,6 +32,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      
+
       <body
         className={`${poppins.variable} ${josefin.variable} !bg-white bg-no-repeat dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300`}
       >
@@ -54,7 +56,7 @@ const Custom: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoading } = useLoadUserQuery({});
 
   useEffect(() => {
-    socketId.on("connection", () => {});
+    socketId.on("connection", () => { });
   }, []);
 
   return <div>{isLoading ? <Loader /> : <div>{children} </div>}</div>;

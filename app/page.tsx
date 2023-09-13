@@ -19,8 +19,8 @@ const Page: FC<Props> = (props) => {
     <div>
       <Heading
         title="Foodtek-ftc"
-        description="ELearning is a platform for students to learn and get help from teachers"
-        keywords="Prograaming,MERN,Redux,Machine Learning"
+        description="เราคือผู้เชี่ยวชาญในเรื่อง ISO"
+        keywords="ISO,โรงงาน,มาตรฐานสากล"
       />
       <Header
         open={open}
