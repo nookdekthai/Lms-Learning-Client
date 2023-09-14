@@ -18,7 +18,7 @@ const Page: FC<Props> = (props) => {
   return (
     <div>
       <Heading
-        title="Foodtek-ftc"
+        title="E-learning"
         description="เราคือผู้เชี่ยวชาญในเรื่อง ISO"
         keywords="ISO,โรงงาน,มาตรฐานสากล"
       />
